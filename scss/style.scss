@@ -1,39 +1,84 @@
 @import "../scss/reset";
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-%flex{
-    display: flex;
-    justify-content: space-between;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Syncopate:wght@400;700&display=swap");
+%flex {
+  display: flex;
+  justify-content: space-between;
 }
 
-body{
-    font-family: "Roboto";
-    font-size: 16px;
-    font-weight: 400px;
+%text {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26.5px;
+  letter-spacing: 0.05em;
+  position: absolute;
 }
 
-@mixin button($width,$height,$radius,$bg){
-    width: $width;
-    height: $height;
-    border-radius: $radius;
-    background-color: $bg;  
+%text-box {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21.09px;
+  position: absolute;
 }
 
-@mixin img($position,$top,$left,$index){
+%mytask {
+  position: absolute;
+  height: 58.39px;
+  font-family: "Syncopate";
+  font-size: 57px;
+  font-weight: 700;
+  line-height: 59.34px;
+}
+
+%one {
+  position: absolute;
+  height: 58.39px;
+  font-size: 210px;
+  font-weight: 700;
+  line-height: 243.84px;
+}
+
+body {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 400px;
+}
+
+@mixin button($width, $height, $radius, $bg) {
+  width: $width;
+  height: $height;
+  border-radius: $radius;
+  background-color: $bg;
+}
+
+@mixin img($position, $top, $left, $index) {
   position: $position;
   top: $top;
   left: $left;
   z-index: $index;
 }
 
+@mixin text($top, $left, $width, $color) {
+  top: $top;
+  left: $left;
+  width: $width;
+  color: $color;
+}
 
 $red-color: #d80808;
 $white-color: #ffffff;
+$brown-color: #bb9292;
+$pink-color: #f4bdbd;
+$shadow: #00000087;
+$dark-kolor: #1e0202;
+$border-color: #90070761;
+$blac-kolor: #000000;
+
 
 
 .header {
   display: flex;
   &__left-button {
-    @include button(160px, 56px, 27px, $red-color );
+    @include button(160px, 56px, 27px, $red-color);
 
     margin: 25px 235px 0px 82px;
   }
@@ -43,12 +88,12 @@ $white-color: #ffffff;
     @extend %flex;
     font-size: 18px;
 
-    margin-top: 43px
+    margin-top: 43px;
   }
   &__right-button {
-    @include button(172px, 56px, 27px, $red-color );
+    @include button(172px, 56px, 27px, $red-color);
     color: $white-color;
-    margin:26px 60px 0px 206px;
+    margin: 26px 60px 0px 206px;
     font-size: 19px;
     font-weight: 900;
   }
@@ -61,17 +106,100 @@ $white-color: #ffffff;
   margin: 0 auto;
   position: relative;
 
-  &__girl{
+  &__girl {
     @include img(absolute, 85px, 379px, 4);
   }
-  &__graphic-red{
+  &__graphic-red {
     @include img(absolute, 279px, 92px, 2);
   }
-    &__graphic-dark{
-      @include img(absolute, 279px, 87px, 3);
-    }
-    &__graphic-white{
-      @include img(absolute, 279px, 80px, 4);
-    }
-  
+  &__graphic-dark {
+    @include img(absolute, 279px, 87px, 3);
+  }
+  &__graphic-white {
+    @include img(absolute, 279px, 80px, 4);
+  }
+
+  &__design-red {
+    @include img(absolute, 775px, 876px, 6);
+  }
+  &__design-dark {
+    @include img(absolute, 775px, 870px, 7);
+  }
+  &__design-white {
+    @include img(absolute, 775px, 862px, 8);
+  }
+
+  &__elips-big {
+    @include img(absolute, 210px, 368px, 1);
+  }
+
+  &__elips-red {
+    @include img(absolute, 149px, 307px, 1);
+  }
+
+  &__elips-small-brown {
+    @include img(absolute, 279px, 1010px, 2);
+  }
+
+  &__elips-small-red {
+    @include img(absolute, 775px, 331px, 2);
+  }
+
+  &__text-top {
+    @extend %text;
+    @include text(300px, 1110px, 191px, $brown-color);
+  }
+
+  &__text-bottom {
+    @extend %text;
+    @include text(882px, 115px, 303px, $red-color);
+  }
+}
+
+.my-task {
+  background: url("../img/red_background.png");
+  width: 1437px;
+  height: 945.13px;
+  margin: 0 auto;
+  position: relative;
+
+  &__title {
+    @extend %mytask;
+    @include text(26px, 76px, 353px, $pink-color);
+    z-index: 2;
+  }
+
+  &__shadow {
+    @extend %mytask;
+    @include text(26px, 87px, 421px, $shadow);
+  }
+  &__heart {
+    @include img(absolute, 42px, 618px, 1);
+  }
+
+  &__ideas {
+    @include img(absolute, 300px, 848px, 1);
+  }
+
+  &__computer {
+    @include img(absolute, 543px, 1022px, 1);
+  }
+
+  &__text1 {
+    @include img(absolute, 86px, 128px, 1);
+  }
+
+  &__text2 {
+    @include img(absolute, 300px, 245px, 1);
+  }
+
+  &__text3 {
+    @include img(absolute, 471px, 382px, 1);
+  }
+
+  &__text-box1 {
+    @extend %text-box;
+    @include text(224px, 261px, 233px, $blac-kolor);
+    z-index: 2;
+  }
 }

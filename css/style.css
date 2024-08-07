@@ -2,7 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Syncopate:wght@400;700&display=swap");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -56,6 +56,30 @@ table {
 .header__nav {
   display: flex;
   justify-content: space-between;
+}
+
+.graphic-design__text-bottom, .graphic-design__text-top {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26.5px;
+  letter-spacing: 0.05em;
+  position: absolute;
+}
+
+.my-task__text-box1 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21.09px;
+  position: absolute;
+}
+
+.my-task__shadow, .my-task__title {
+  position: absolute;
+  height: 58.39px;
+  font-family: "Syncopate";
+  font-size: 57px;
+  font-weight: 700;
+  line-height: 59.34px;
 }
 
 body {
@@ -121,4 +145,122 @@ body {
   top: 279px;
   left: 80px;
   z-index: 4;
+}
+.graphic-design__design-red {
+  position: absolute;
+  top: 775px;
+  left: 876px;
+  z-index: 6;
+}
+.graphic-design__design-dark {
+  position: absolute;
+  top: 775px;
+  left: 870px;
+  z-index: 7;
+}
+.graphic-design__design-white {
+  position: absolute;
+  top: 775px;
+  left: 862px;
+  z-index: 8;
+}
+.graphic-design__elips-big {
+  position: absolute;
+  top: 210px;
+  left: 368px;
+  z-index: 1;
+}
+.graphic-design__elips-red {
+  position: absolute;
+  top: 149px;
+  left: 307px;
+  z-index: 1;
+}
+.graphic-design__elips-small-brown {
+  position: absolute;
+  top: 279px;
+  left: 1010px;
+  z-index: 2;
+}
+.graphic-design__elips-small-red {
+  position: absolute;
+  top: 775px;
+  left: 331px;
+  z-index: 2;
+}
+.graphic-design__text-top {
+  top: 300px;
+  left: 1110px;
+  width: 191px;
+  color: #bb9292;
+}
+.graphic-design__text-bottom {
+  top: 882px;
+  left: 115px;
+  width: 303px;
+  color: #d80808;
+}
+
+.my-task {
+  background: url("../img/red_background.png");
+  width: 1437px;
+  height: 945.13px;
+  margin: 0 auto;
+  position: relative;
+}
+.my-task__title {
+  top: 26px;
+  left: 76px;
+  width: 353px;
+  color: #f4bdbd;
+  z-index: 2;
+}
+.my-task__shadow {
+  top: 26px;
+  left: 87px;
+  width: 421px;
+  color: rgba(0, 0, 0, 0.5294117647);
+}
+.my-task__heart {
+  position: absolute;
+  top: 42px;
+  left: 618px;
+  z-index: 1;
+}
+.my-task__ideas {
+  position: absolute;
+  top: 300px;
+  left: 848px;
+  z-index: 1;
+}
+.my-task__computer {
+  position: absolute;
+  top: 543px;
+  left: 1022px;
+  z-index: 1;
+}
+.my-task__text1 {
+  position: absolute;
+  top: 86px;
+  left: 128px;
+  z-index: 1;
+}
+.my-task__text2 {
+  position: absolute;
+  top: 300px;
+  left: 245px;
+  z-index: 1;
+}
+.my-task__text3 {
+  position: absolute;
+  top: 471px;
+  left: 382px;
+  z-index: 1;
+}
+.my-task__text-box1 {
+  top: 224px;
+  left: 261px;
+  width: 233px;
+  color: #000000;
+  z-index: 2;
 }
