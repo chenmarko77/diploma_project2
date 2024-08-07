@@ -66,11 +66,19 @@ table {
   position: absolute;
 }
 
-.my-task__text-box1 {
+.my-task__text-box2, .my-task__text-box1 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18.75px;
+  position: absolute;
+}
+
+.my-task__text-box5, .my-task__text-box4, .my-task__text-box3 {
   font-size: 18px;
   font-weight: 700;
   line-height: 21.09px;
   position: absolute;
+  text-align: right;
 }
 
 .my-task__shadow, .my-task__title {
@@ -261,6 +269,34 @@ body {
   top: 224px;
   left: 261px;
   width: 233px;
+  color: #000000;
+  z-index: 2;
+}
+.my-task__text-box2 {
+  top: 389px;
+  left: 378px;
+  width: 304px;
+  color: #fff9f9;
+  z-index: 2;
+}
+.my-task__text-box3 {
+  top: 444px;
+  left: 340px;
+  width: 219px;
+  color: #fff9f9;
+  z-index: 2;
+}
+.my-task__text-box4 {
+  top: 650px;
+  left: 645px;
+  width: 239px;
+  color: #000000;
+  z-index: 2;
+}
+.my-task__text-box5 {
+  top: 794px;
+  left: 603px;
+  width: 277px;
   color: #000000;
   z-index: 2;
 }

@@ -14,10 +14,19 @@
 }
 
 %text-box {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18.75px;
+  position: absolute;
+}
+
+%text-box2 {
   font-size: 18px;
   font-weight: 700;
   line-height: 21.09px;
   position: absolute;
+text-align: right;
+
 }
 
 %mytask {
@@ -72,8 +81,7 @@ $shadow: #00000087;
 $dark-kolor: #1e0202;
 $border-color: #90070761;
 $blac-kolor: #000000;
-
-
+$text-color: #fff9f9;
 
 .header {
   display: flex;
@@ -201,5 +209,29 @@ $blac-kolor: #000000;
     @extend %text-box;
     @include text(224px, 261px, 233px, $blac-kolor);
     z-index: 2;
+  }
+
+  &__text-box2 {
+    @extend %text-box;
+    @include text(389px, 378px, 304px, $text-color);
+    z-index: 2;
+  }
+
+  &__text-box3 {
+    @extend %text-box2;
+    @include text(444px, 340px, 219px, $text-color);
+    z-index: 2;
+  }
+
+  &__text-box4 {
+    @extend %text-box2;
+    @include text(650px, 645px, 239px, $blac-kolor);
+    z-index: 2;   
+  }
+
+  &__text-box5 {
+    @extend %text-box2;
+    @include text(794px, 603px, 277px, $blac-kolor);
+    z-index: 2;   
   }
 }
