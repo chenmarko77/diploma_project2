@@ -1,5 +1,37 @@
 @import "../scss/reset";
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Syncopate:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sen:wght@400..800&family=Syncopate:wght@400;700&display=swap");
+@font-face {
+  font-family: "Awesome-Font";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Awesome-Font"), local("Awesome-Font-Regular"),
+    url(/trebuchetms.ttf) format("woff");
+}
+
+$red-color: #d80808;
+$white-color: #ffffff;
+$brown-color: #bb9292;
+$pink-color: #f4bdbd;
+$shadow: #00000087;
+$dark-color: #1e0202;
+$border-color: #90070761;
+$border-color-two: #ac898957;
+$black-color: #000000;
+$text-color: #fff9f9;
+$light-shadow: #00000040;
+$light-grey: #eeeeee;
+$shadow-two: #5e0e0e75;
+$shadow-red: #ff0606;
+$number-two: #f0c9c9;
+$number-three: #fb0909;
+$border-color-three: #51030370;
+$project-titles: #e4cfcf;
+$project-shadow: #e20d0d8a;
+$reviews-shadow: #FF00006B;
+$reviews-circle: #39030338;
+$circle-shadow: #00000047;
+
+
 %flex {
   display: flex;
   justify-content: space-between;
@@ -25,8 +57,6 @@
   font-weight: 700;
   line-height: 21.09px;
   position: absolute;
-text-align: right;
-
 }
 
 %mytask {
@@ -46,10 +76,74 @@ text-align: right;
   line-height: 243.84px;
 }
 
-body {
-  font-family: "Roboto";
-  font-size: 16px;
-  font-weight: 400px;
+%graphic_design {
+  font-family: "Syncopate";
+  font-weight: 700;
+  letter-spacing: 0.005em;
+  position: absolute;
+  text-shadow: 0px 4px 4px 0px $light-shadow;
+}
+
+%graphic {
+  width: 677.77px;
+  height: 87.19px;
+  rotate: 0.15deg;
+  font-size: 96px;
+  line-height: 96px;
+  top: 279px;
+}
+
+%design {
+  width: 507px;
+  height: 92px;
+  font-size: 95px;
+  font-weight: 700;
+  line-height: 92px;
+  top: 775px;
+}
+
+%one {
+  height: 241.48px;
+  font-size: 210px;
+  font-weight: 700;
+  line-height: 243.84px;
+  position: absolute;
+  z-index: 5;
+}
+
+%projects {
+  position: absolute;
+  width: 392.81px;
+  height: 58.28px;
+  top: 39px;
+  font-family: "Syncopate";
+  font-size: 57px;
+  font-weight: 700;
+  line-height: 59.34px;
+}
+
+%position {
+  position: relative;
+  margin: 0 auto;
+}
+
+
+
+%reviews {
+  position: absolute;
+  width: 359.5px;
+  height: 57.4px;
+  top: 26.26px;
+  font-family: "Syncopate";
+  font-size: 57px;
+  font-weight: 700;
+  line-height: 59.34px;
+}
+
+@mixin graphic_design($color, $index, $left) {
+  color: $color;
+  z-index: $index;
+  left: $left;
 }
 
 @mixin button($width, $height, $radius, $bg) {
@@ -73,15 +167,11 @@ body {
   color: $color;
 }
 
-$red-color: #d80808;
-$white-color: #ffffff;
-$brown-color: #bb9292;
-$pink-color: #f4bdbd;
-$shadow: #00000087;
-$dark-kolor: #1e0202;
-$border-color: #90070761;
-$blac-kolor: #000000;
-$text-color: #fff9f9;
+body {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 400px;
+}
 
 .header {
   display: flex;
@@ -117,25 +207,6 @@ $text-color: #fff9f9;
   &__girl {
     @include img(absolute, 85px, 379px, 4);
   }
-  &__graphic-red {
-    @include img(absolute, 279px, 92px, 2);
-  }
-  &__graphic-dark {
-    @include img(absolute, 279px, 87px, 3);
-  }
-  &__graphic-white {
-    @include img(absolute, 279px, 80px, 4);
-  }
-
-  &__design-red {
-    @include img(absolute, 775px, 876px, 6);
-  }
-  &__design-dark {
-    @include img(absolute, 775px, 870px, 7);
-  }
-  &__design-white {
-    @include img(absolute, 775px, 862px, 8);
-  }
 
   &__elips-big {
     @include img(absolute, 210px, 368px, 1);
@@ -143,6 +214,42 @@ $text-color: #fff9f9;
 
   &__elips-red {
     @include img(absolute, 149px, 307px, 1);
+  }
+
+  &__title-two {
+    @extend %design;
+    @extend %graphic_design;
+    @include graphic_design($light-grey, 10, 862px);
+  }
+
+  &__title-two-red {
+    @extend %design;
+    @extend %graphic_design;
+    @include graphic_design($shadow-two, 9, 869px);
+  }
+
+  &__title-two-dark {
+    @extend %design;
+    @extend %graphic_design;
+    @include graphic_design($shadow-red, 8, 874px);
+  }
+
+  &__title-one {
+    @extend %graphic;
+    @extend %graphic_design;
+    @include graphic_design($light-grey, 10, 67px);
+  }
+
+  &__title-one-red {
+    @extend %graphic;
+    @extend %graphic_design;
+    @include graphic_design($shadow-two, 9, 74px);
+  }
+
+  &__title-one-dark {
+    @extend %graphic;
+    @extend %graphic_design;
+    @include graphic_design($shadow-red, 8, 79px);
   }
 
   &__elips-small-brown {
@@ -206,32 +313,246 @@ $text-color: #fff9f9;
   }
 
   &__text-box1 {
-    @extend %text-box;
-    @include text(224px, 261px, 233px, $blac-kolor);
+    @extend %text-box2;
+    @include text(224px, 261px, 233px, $black-color);
     z-index: 2;
   }
 
   &__text-box2 {
-    @extend %text-box;
+    @extend %text-box2;
     @include text(389px, 378px, 304px, $text-color);
     z-index: 2;
   }
 
   &__text-box3 {
-    @extend %text-box2;
-    @include text(444px, 340px, 219px, $text-color);
+    @extend %text-box;
+    @include text(444px, 378px, 219px, $text-color);
     z-index: 2;
   }
 
   &__text-box4 {
-    @extend %text-box2;
-    @include text(650px, 645px, 239px, $blac-kolor);
-    z-index: 2;   
+    @extend %text-box;
+    @include text(650px, 645px, 239px, $black-color);
+    z-index: 2;
+    text-align: right;
   }
 
   &__text-box5 {
     @extend %text-box2;
-    @include text(794px, 603px, 277px, $blac-kolor);
-    z-index: 2;   
+    @include text(794px, 603px, 277px, $black-color);
+    z-index: 2;
+  }
+
+  &__one {
+    @extend %one;
+    @include text(187px, 135px, 124px, $dark-color);
+    -webkit-text-stroke: 2px $border-color;
+    font-family: "Trebuchet MS";
+  }
+
+  &__two {
+    @extend %one;
+    @include text(488px, 276px, 122px, $number-two);
+    -webkit-text-stroke: 3px $border-color-two;
+    font-family: "Sen";
+    height: 265px;
+    font-size: 200px;
+    line-height: 241px;
+  }
+
+  &__three {
+    @extend %one;
+    @include text(692px, 421px, 122px, $number-three);
+    -webkit-text-stroke: 3px $border-color-three;
+    font-family: "Sen";
   }
 }
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  width: 1437px;
+  height: 1191px;
+  background: url("../img/black-background.png");
+  @extend %position;
+  z-index: -2;
+
+
+  &__title {
+    @extend %projects;
+    left: 78px;
+    color: $project-titles;
+    z-index: 1;
+  }
+
+  &__title-shadow {
+    @extend %projects;
+    left: 82px;
+    color: $project-shadow;
+
+  }
+  &__list {
+    width: 1144px;
+    margin: 0 auto;
+    padding-top: 180px;
+    padding-bottom: 55px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 84px;
+
+    &__item {
+      height: 340px;
+      &__title {
+        width: 127.26px;
+        height: 20.75px;
+        font-size: 18px;
+        font-weight: 900;
+        line-height: 21.09px;
+        color: $white-color;
+        margin-top: 10px;
+        margin-bottom: 3px;
+      }
+
+      &__text {
+        width: 62.13px;
+        height: 18.77px;
+        line-height: 18.75px;
+        color: $white-color;
+      }
+      &__text::after {
+        content: url("../img/arrow_text.png");
+        display: inline-block;
+        width: 9px;
+        height: 15px;
+        z-index: 10;
+        position: absolute;
+        margin-left: 10px;
+      }
+
+      &__box {
+        position: relative;
+        width: 446px;
+        height: 287px;
+        border-radius: 11px;
+        border: 2px solid #1d1c1c54;
+        background: linear-gradient(180deg, #e30707 0%, #6a1212 73.1%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &__img {
+          width: 372.77px;
+          height: 231.16px;
+          border-radius: 17px;
+        }
+      }
+      &__box::before {
+        content: url("../img/arrow_text.png");
+        display: inline-block;
+        width: 9px;
+        height: 15px;
+        content: "";
+        position: absolute;
+        width: 462.96px;
+        height: 305.25px;
+        top: -8.89px;
+        left: -8px;
+        border-radius: 11px;
+        background: #282727ba;
+        box-shadow: 0px 0px 69px 37px #615d5d47;
+        z-index: -1;
+      }
+    }
+  }
+  &__button{
+    width: 184.38px;
+height: 63.22px;
+border-radius: 27px;
+background-color: $red-color;
+color: $white-color;
+align-self: center;
+  }
+}
+
+.reviews{
+  @extend %position;
+  width: 1437px;
+  height: 1756px;
+  background: url("../img/reviews_background.png");
+
+  &__title{
+   color: $pink-color;
+   @extend %reviews;
+   left: 72px;
+   z-index: 1;
+  }
+  &__title-shadow{
+    color: $reviews-shadow;
+    @extend %reviews;
+    left: 76px;
+   }
+   &__anna-img{
+    @include img(absolute, 63px, 179px, 3);
+   }
+   &__daria-img{
+    @include img(absolute, 57px, 982px, 3);
+   }
+   &__mark-img{
+    @include img(absolute, 335px, 556px, 3);
+   }
+
+
+   &__circle{
+    @include img(absolute, 190px, 156px, 1);
+    @include button(310px, 302px, 50%, $reviews-circle);
+    box-shadow: 0px 0px 13px 20px $circle-shadow;
+   }
+   &__circle-small{
+    @include img(absolute, 210px, 175px, 2);
+    @include button(272px, 257px, 50%, white);
+    background: linear-gradient(180deg, #BE0606 25.84%, #C99898 50.93%, #040101 111.36%);
+    box-shadow: 0px 0px 13px 20px $circle-shadow;
+   }
+
+
+   &__circle-two{
+    @include img(absolute, 185px, 960px, 1);
+    @include button(310px, 302px, 50%, $reviews-circle);
+    box-shadow: 0px 0px 13px 20px $circle-shadow;
+   }
+   &__circle-small-two{
+    @include img(absolute, 200px, 979px, 2);
+    @include button(272px, 257px, 50%, white);
+    background: linear-gradient(180deg, #BE0606 25.84%, #C99898 50.93%, #040101 111.36%);
+    box-shadow: 0px 0px 13px 20px $circle-shadow;
+   }
+
+
+   &__circle-three{
+    @include img(absolute, 190px, 155px, 1);
+    @include button(310px, 302px, 50%, $reviews-circle);
+    box-shadow: 0px 0px 13px 20px $circle-shadow;
+   }
+   &__circle-small-three{
+    @include img(absolute, 570px, 562px, 2);
+    @include button(272px, 257px, 50%, white);
+    background: linear-gradient(180deg, #BE0606 25.84%, #C99898 50.93%, #040101 111.36%);
+    box-shadow: 0px 0px 13px 20px $circle-shadow;
+   }
+
+
+//    &__elipse{
+//     @include img(absolute, 200px, 140px, 4);
+//     @include button(309px, 144px, 49%, #EA1B1B);
+//     border: 6px solid;
+
+// border-color: linear-gradient(0deg, rgba(101, 24, 24, 0.62), rgba(101, 24, 24, 0.62)),
+// linear-gradient(0deg, rgba(54, 27, 27, 0.2), rgba(54, 27, 27, 0.2));
+
+
+// box-shadow: 0px 0px 4px 0px #00000040;
+
+//    }
+
+  }
